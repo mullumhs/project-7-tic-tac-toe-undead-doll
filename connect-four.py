@@ -40,3 +40,16 @@ while True:
             break
 
     print_board()
+
+def check_horizontal(row):
+    count = 1
+    previous_token = row[0]
+    for token in row[1:]:
+        if token == previous_token and token != ' ':
+            count += 1
+            if count == 4:
+                return True
+        else:
+            count = 1
+        previous_token = token
+    return False
